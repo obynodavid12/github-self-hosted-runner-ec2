@@ -53,6 +53,7 @@ jobs:
       run: terraform plan -no-color
       continue-on-error: true
       env:
+        PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Terraform Plan Status
