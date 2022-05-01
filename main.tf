@@ -34,6 +34,9 @@ resource "aws_launch_template" "ec2_launch_template" {
   tags = {
     Name = "github_runner"
   }
+  metadata_options {
+     http_tokens = "required"
+  }
 }
 
 resource "aws_autoscaling_group" "github_runners_autoscaling_group" {
@@ -47,9 +50,6 @@ resource "aws_autoscaling_group" "github_runners_autoscaling_group" {
   launch_template {
     id      = aws_launch_template.ec2_launch_template.id
     version = "$Latest"
-  }
-  metadata_options {
-     http_tokens = "required"
   }
 }
 
