@@ -1,7 +1,7 @@
 variable "ami" {
   description = "The AMI for the GitHub Runner backing EC2 Instance"
   type        = string
-  deafult     = "ami-0c6a6b0e75b2b6ce7"
+  default     = "ami-0c6a6b0e75b2b6ce7"
 }
 
 variable "instance_type" {
@@ -19,7 +19,7 @@ variable "key_name" {
 variable "github_repo_url" {
   description = "The GitHub Repo URL for which the GitHub Runner to be registered with"
   type        = string
-  default     = "https://github.com/{owner}/{repo}
+  default     = "https://github.com/{owner}/{repo}"
 }
 
 variable "personal_access_token" {
