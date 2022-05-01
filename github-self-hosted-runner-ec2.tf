@@ -51,7 +51,6 @@ resource "aws_autoscaling_group" "github_runners_autoscaling_group" {
 variable "ami" {
   description = "The AMI for the GitHub Runner backing EC2 Instance"
   type        = string
-  default     = "ami-064ff912f78e3e561"
 }
 
 variable "instance_type" {
