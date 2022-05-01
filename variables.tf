@@ -22,7 +22,7 @@ variable "github_repo_url" {
   default     = "https://github.com/{owner}/{repo}
 }
 
-variable "github_repo_pat_token" {
+variable "personal_access_token" {
   description = "The GitHub Repo Pat Token that would be used by the GitHub Runner to authenticate with the GitHub Repo"
   type        = string
   default     = ""
