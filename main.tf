@@ -50,4 +50,10 @@ resource "aws_autoscaling_group" "github_runners_autoscaling_group" {
   }
 }
 
-
+# resource "aws_instance" "good_example" {
+#   ami           = "ami-005e54dee72cc1d00"
+#   instance_type = "t2.micro"
+#   metadata_options {
+#     http_tokens = "required"
+#   }
+# }
