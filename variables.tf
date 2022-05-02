@@ -55,7 +55,7 @@ variable "desired_capacity" {
 variable "min_size" {
   description = "The Minimum number of EC2 instances in the AutoScaling Group"
   type        = number
-  default     = 1
+  default     = 0
 }
 
 variable "max_size" {
