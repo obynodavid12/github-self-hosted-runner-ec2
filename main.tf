@@ -37,7 +37,7 @@ resource "aws_launch_template" "ec2_launch_template" {
 }
 
 resource "aws_autoscaling_group" "github_runners_autoscaling_group" {
-  name                      = "github_runners_autoscaling_group"
+ # name                      = "github_runners_autoscaling_group"
   availability_zones        = data.aws_availability_zones.all_azs.names
   health_check_type         = "EC2"
   health_check_grace_period = var.health_check_grace_period
