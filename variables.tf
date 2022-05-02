@@ -49,18 +49,18 @@ variable "health_check_grace_period" {
 variable "desired_capacity" {
   description = "The desired number of EC2 instances in the AutoScaling Group"
   type        = number
-  default     = 0
+  default     = 1
 }
 
 variable "min_size" {
   description = "The Minimum number of EC2 instances in the AutoScaling Group"
   type        = number
-  default     = 0
+  default     = 1
 }
 
 variable "max_size" {
   description = "The Maximum number of EC2 instances in the AutoScaling Group"
   type        = number
-  default     = 0
+  default     = 1
 }
 
