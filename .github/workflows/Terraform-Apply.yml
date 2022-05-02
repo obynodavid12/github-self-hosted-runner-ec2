@@ -37,39 +37,39 @@ jobs:
       with:
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-    # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
-    - name: Terraform Init
-      id: init
-      run: terraform init
+#     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
+#     - name: Terraform Init
+#       id: init
+#       run: terraform init
      
-    - name: Terraform validate
-      run: |
-        terraform validate   
+#     - name: Terraform validate
+#       run: |
+#         terraform validate   
 
-    # Generates an execution plan for Terraform
-    - name: Terraform Plan
-      id: plan
-      if: github.event_name == 'push'
-      run: terraform plan -no-color
-      continue-on-error: true
+#     # Generates an execution plan for Terraform
+#     - name: Terraform Plan
+#       id: plan
+#       if: github.event_name == 'push'
+#       run: terraform plan -no-color
+#       continue-on-error: true
 
    
-    - name: Terraform Plan Status
-      if: steps.plan.outcome == 'failure'
-      run: exit 1
+#     - name: Terraform Plan Status
+#       if: steps.plan.outcome == 'failure'
+#       run: exit 1
 
      
-    - name: Terraform validate
-      run: |
-        terraform validate
+#     - name: Terraform validate
+#       run: |
+#         terraform validate
     
    
-    - name: Terraform Apply
-      run: |
-        terraform apply -auto-approve -var 'personal_access_token=${{ secrets.PERSONAL_ACCESS_TOKEN }}'
-      env:
-        AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#     - name: Terraform Apply
+#       run: |
+#         terraform apply -auto-approve -var 'personal_access_token=${{ secrets.PERSONAL_ACCESS_TOKEN }}'
+#       env:
+#         AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
+#         AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     
     - name: Terraform destroy
