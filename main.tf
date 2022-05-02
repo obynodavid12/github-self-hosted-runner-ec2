@@ -23,7 +23,7 @@ data "aws_availability_zones" "all_azs" {
 
 
 resource "aws_launch_template" "ec2_launch_template" {
-  #name        = "github_runner_launch_template"
+  name_prefix        = "github_runner_launch_template"
   description = "Launch Template for GitHub Runners EC2 AutoScaling Group"
 
   image_id      = var.ami
